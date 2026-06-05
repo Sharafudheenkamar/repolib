@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+
+    <style>
+
+    body{
+    background-image: url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+        form{
+    background-color: transparent;
+    width: 350px;
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+
+    box-shadow: 0px 0px 100px rgba(0,0,0,0.5);
+    }
+        
+
+        h2{
+            text-align: center;
+            color: white;
+        }
+
+        label{
+            color: white;
+            font-size: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        input::placeholder{
+            color: rgba(255,255,255,0.7);
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: blue;
+            color: white;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+     <h1>Add New Employee</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit"><br><br>
+    <br>
+    <a href="/">Home</a><br>
+    <a href="/employee/">View Employees</a>
+    </form>
+</body>
+</html>

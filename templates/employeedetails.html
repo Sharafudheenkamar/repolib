@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body>
+
+    <h1>Employee Details</h1>
+
+    <p><a href="{% url 'detailsview' %}">Add Employee</a></p>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for employee in employee %}
+
+        <tr>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.email }}</td>
+            <td>
+                <a href="/employeeedit/{{employee.id}}/">Edit</a>
+                <a href="/employeedelete/{{employee.id}}/">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+</body>
+</html>
